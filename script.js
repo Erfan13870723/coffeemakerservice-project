@@ -12,4 +12,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {anchor.addEventList
 });
 });
 });
+const sections =
+document.querySelectorAll('section');
+window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+        const rect =
+        sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            sec.classList.add('visible');
+        }
+    });
+});
 
