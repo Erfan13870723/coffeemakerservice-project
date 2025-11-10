@@ -92,6 +92,13 @@ nav a:hover {
     display: none;
     font-size: 1.8rem;
     cursor: pointer;
+    user-select: none;
+    color: #6b3e26;
+    transition: transform 0.3s ease;
+}
+
+.menu-btn.open {
+    transform: rotate(90deg);
 }
 
 @media (max-width: 768px) {
@@ -101,11 +108,12 @@ nav a:hover {
         background: rgba(255, 255, 255, 0.95);
         position: absolute;
         top: 70px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        padding: 15px 0;
+        right: 40px;
+        width: 200%;
+        text-align: right;
+        padding: 15px;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        animation: fadeIn 0.4s ease;
     }
 
     nav.active {
@@ -266,19 +274,6 @@ section.visible {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-footer {
-    text-align: center;
-    background: #f7f2ec;
-    color: #333;
-    padding: 30px 10px;
-    font-size: 0.95rem;
-    border-top: 2px solid #e0d2c1;
-}
-
-footer p {
-    margin: 6px 0;
-}
-
 .about-section .container {
     max-width: 900px;
     margin: 0 auto;
@@ -408,6 +403,14 @@ button:hover {
     text-decoration: underline;
 }
 
+footer {
+    text-align: center;
+    background: #f7f2ec;
+    color: #333;
+    padding: 30px 10px;
+    font-size: 0.95rem;
+    border-top: 2px solid #e0d2c1;
+}
 @keyframes fadeIn {
     from {
         opacity: 0;

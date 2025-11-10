@@ -7,19 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <header>
-        <h1>تعمیرات قهوه ساز</h1>
-        <nav>
-            <a href="#">خانه</a>
-            <a href="yasouj.html">نمایندگی یاسوج</a>
-            <a href="najafabad.html">نمایندگی نجف آباد</a>
-            <a href="login.html">ورود / عضویت</a>
-            <a href="aboutour.html">درباره ما</a>
-            <a href="#contact">تماس با ما</a>
-        </nav>
-        <div class="menu-btn" id="menu-btn">≡</div>
-    </header>
+    <?php include("them_header.html"); ?>
 
     <section class = "hero">
 <div class = "hero-content">
@@ -52,7 +40,7 @@
 </div>
     </section>
 
-    <section = class="benefits">
+    <section class="benefits">
 <h2>چرا ما را انتخاب کنید؟</h2>
 <ul>
 <li>تعمیرکاران آموزش دیده و متخصص برندهای معتبر</li>
@@ -70,13 +58,7 @@
 </div>
     </section>
 
-    <footer id = "contact">
-<p>تماس تلفن : 09170000000📞 
-    |
-     aaaaa@gmail.com : 📧ایمیل </p>
-<p>© 2025 .تعمیرات قهوه‌ساز - تمامی حقوق محفوظ است</p>
-
-    </footer>
+<?php include("them_footer.html"); ?>
 
     <script src="script.js"></script>
 </body>

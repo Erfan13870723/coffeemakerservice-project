@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود و عضویت | تعمیرات دستگاه قهوه‌ساز</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <?php include("them_header.html"); ?>
+
+    <section class="login-section">
+        <div class="login-box">
+            <h2>ورود به حساب کاربری</h2>
+            <form>
+                <label>:ایمیل</label>
+                <input type="email" placeholder="example@gmail.com" required>
+                <label>:رمز عبور</label>
+                <input type="password" placeholder="••••••••" required>
+
+                <button type="submit">ورود</button>
+                <p class="register-text">هنوز ثبت نام نکردی؟ <a href="#" id="show-register">ثبت نام</a></p>
+            </form>
+        </div>
+
+        <div class="register-box hidden">
+            <h2>ثبت نام کاربر جدید</h2>
+            <form>
+                <label>:نام و نام خانوادگی</label>
+                <input type="text" placeholder="مثلا عرفان محمدی">
+
+                <label>:ایمیل</label>
+                <input type="email" placeholder="example@gmail.com" required>
+
+                <label>:رمز عبور</label>
+                <input type="password" placeholder="رمز عبور" required>
+
+                <button type="submit">ثبت نام</button>
+                <p class="register-text">حساب داری؟ <a href="#" id="show-login">ورود</a></p>
+
+            </form>
+        </div>
+    </section>
+
+    <?php include("them_footer.html"); ?>
+
+    <script src="script.js"></script>
+    <script>
+        const loginBox = document.querySelector('.login-box');
+        const registerBox = document.querySelector('.register-box');
+
+        document.getElementById('show-register').addEventListener('click', e => {
+            e.preventDefault();
+            loginBox.classList.add('hidden');
+            registerBox.classList.remove('hidden');
+        });
+
+        document.getElementById('show-login').addEventListener('click', e => {
+            e.preventDefault();
+            registerBox.classList.add('hidden');
+            loginBox.classList.remove('hidden');
+        });
+
+    </script>
+</body>
+
+</html>
