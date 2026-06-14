@@ -1,0 +1,223 @@
+.menu-btn {
+    display: none;
+}
+
+/*برای سایز گوشی*/
+
+@media (max-width: 768px) {
+
+    header {
+        position: relative;
+        z-index: 2000;
+    }
+
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        position: fixed;
+        top: 8px;
+        left: 8px;
+        background: rgba(107, 74, 43, 0.75);
+        color: white;
+        border-radius: 8px;
+        font-size: 28px;
+        cursor: pointer;
+        z-index: 3000;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    nav {
+        position: fixed;
+        top: 60px;
+        left: -260px;
+        width: 250px;
+        max-height: calc(100vh - 65px);
+        background: rgba(20, 20, 20, 0.50);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        transition: left .3s ease;
+        z-index: 2500;
+        overflow-y: auto;
+        border-radius: 0 0 16px 0;
+    }
+
+    nav.active {
+        left: 0;
+    }
+
+    nav a {
+        color: white !important;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 12px 10px;
+        color: white !important;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        transition: 0.3s;
+    }
+
+    nav ul li:last-child a {
+        border-bottom: none;
+    }
+
+    nav ul li a:hover {
+        background: rgba(255, 255, 255, 0.09);
+        color: white;
+    }
+
+    nav ul li a::after {
+        display: none !important;
+    }
+
+    .admin-panel-boxes{
+        flex-direction: column;
+    }
+
+    .admin-box{
+        width: 100% !important;
+        margin-bottom: 15px;
+    }
+
+    .repair-panel-boxes{
+        flex-direction: column;
+    }
+    .repair-box{
+        width: 100% !important;
+        margin-bottom: 15px;
+    }
+}
+
+/*برای سایز تبلت یا آیپد*/
+
+@media (max-width: 1024px) {
+
+    header {
+        position: relative;
+        z-index: 2000;
+    }
+
+    header nav{
+        display: none !important;
+    }
+
+    .menu-btn {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        background: rgba(107, 74, 43, 0.75);
+        color: white;
+        border-radius: 10px;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 3000;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    nav {
+        position: fixed;
+        top: 70px;
+        left: -320px;
+        width: 300px;
+        max-height: calc(100vh - 80px);
+        background: rgba(20, 20, 20, 0.50);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        transition: left .3s ease;
+        z-index: 2500;
+        overflow-y: auto;
+        border-radius: 0 0 16px 0;
+    }
+
+    nav.active {
+        left: 0;
+    }
+
+    nav a {
+        color: white !important;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 14px 12px;
+        color: white !important;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        transition: 0.3s;
+    }
+
+    nav ul li:last-child a {
+        border-bottom: none;
+    }
+
+    nav ul li a:hover {
+        background: rgba(255, 255, 255, 0.09);
+        color: white;
+    }
+
+    nav ul li a::after {
+        display: none !important;
+    }
+
+    .admin-panel-boxes{
+        flex-direction: column;
+    }
+
+    .admin-box{
+        width: 100% !important;
+        margin-bottom: 15px;
+    }
+
+    .repair-panel-boxes{
+        flex-direction: column;
+    }
+    .repair-box{
+        width: 100% !important;
+        margin-bottom: 15px;
+    }
+}

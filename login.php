@@ -1,55 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ورود و عضویت | تعمیرات دستگاه قهوه‌ساز</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <?php include("them_header.html"); ?>
+<?php
+$alreadyLoggedIn = isset($_SESSION['fullname']);
+?>
+<?php include("theme_header.php"); ?>
 
     <section class="login-section">
+        <?php if ($alreadyLoggedIn): ?>
+            <div class="login-alert">
+                شما قبلاً وارد سایت شده‌اید ☕
+                <br>
+                <a href="logout.php">خروج</a>
+            </div>
+        <?php endif; ?>
+
+        <?php
+        if (isset($_SESSION['msg'])) {
+            echo "<p class='msg'>" . $_SESSION['msg'] . "</p>";
+            unset($_SESSION['msg']);
+        }
+
+        if (isset($_GET['registered'])) {
+            echo "<p class='msg success'>ثبت نام با موفقیت انجام شد، وارد شوید</p>";
+        }
+        ?>
+
+
         <div class="login-box">
             <h2>ورود به حساب کاربری</h2>
-            <form>
+            <form method="post" action="login_check.php" autocomplete="off">
                 <label>:ایمیل</label>
-                <input type="email" placeholder="example@gmail.com" required>
+                <input type="text" name="email" placeholder="example@gmail.com" autocomplete="off" required>
                 <label>:رمز عبور</label>
-                <input type="password" placeholder="••••••••" required>
+                <input type="text" name="password" placeholder="••••••••" autocomplete="new-password" required>
 
-                <button type="submit">ورود</button>
+                <button type="submit" name="login">ورود</button>
                 <p class="register-text">هنوز ثبت نام نکردی؟ <a href="#" id="show-register">ثبت نام</a></p>
             </form>
+            <?php if (isset($error)) echo "<p>$error</p>"; ?>
         </div>
 
         <div class="register-box hidden">
             <h2>ثبت نام کاربر جدید</h2>
-            <form>
+            <form method="post" action="register_action.php" autocomplete="off">
                 <label>:نام و نام خانوادگی</label>
-                <input type="text" placeholder="مثلا عرفان محمدی">
+                <input type="text" name="fullname" placeholder="مثلا عرفان محمدی">
 
                 <label>:ایمیل</label>
-                <input type="email" placeholder="example@gmail.com" required>
+                <input type="email" name="email" placeholder="example@gmail.com" autocomplete="off" required>
 
                 <label>:رمز عبور</label>
-                <input type="password" placeholder="رمز عبور" required>
+                <input type="password" name="password" placeholder="رمز عبور" autocomplete="off" required>
 
-                <button type="submit">ثبت نام</button>
+                <button type="submit" name="register">ثبت نام</button>
                 <p class="register-text">حساب داری؟ <a href="#" id="show-login">ورود</a></p>
 
             </form>
         </div>
     </section>
-
-    <?php include("them_footer.html"); ?>
-
-    <script src="script.js"></script>
-    <script>
-        const loginBox = document.querySelector('.login-box');
+    
+<script>
+        
+const loginBox = document.querySelector('.login-box');
         const registerBox = document.querySelector('.register-box');
 
         document.getElementById('show-register').addEventListener('click', e => {
@@ -63,8 +73,6 @@
             registerBox.classList.add('hidden');
             loginBox.classList.remove('hidden');
         });
-
     </script>
-</body>
-
-</html>
+    <?php include("theme_footer.html"); ?>
+    
